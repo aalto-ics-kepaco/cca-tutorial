@@ -4,6 +4,14 @@
 % examples of the chapter 2 of the paper "A Tutorial on Canonical 
 % Correlation Methods".
 
+%--------------------------------------------------------------------------
+% © 29/01/2017 Viivi Uurtio, Aalto University
+% viivi.uurtio@aalto.fi
+%
+% This code is for academic purposes only.
+% Commercial use is not allowed.
+%--------------------------------------------------------------------------
+
 %% Example 2.1. Solving CCA Through the Standard Eigenvalue Problem
 
 clear
