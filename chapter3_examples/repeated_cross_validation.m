@@ -1,6 +1,26 @@
 function [c1_opt,c2_opt,final] = repeated_cross_validation(X_a,X_b,c1,c2,reps)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+% This function performs repeated cross-validation to determine the optimal
+% regularisation parameters.
+
+% Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
+%--------------------------------------------------------------------------
+% Input 
+%       X_a: the data matrix of the 1st view
+%       X_b: the data matrix of the 2nd view
+%       c1: a vector containing the values to be tested
+%       c2: a vector containing the values to be tested
+%       reps: number of repetitions of the cross-validation
+% Output
+%       c1_opt: the optimal c1
+%       c2_opt: the optimal c2
+%       final: the test canonical correlations at all c1 and c2 values
+%--------------------------------------------------------------------------
+% © 30/01/2017 Viivi Uurtio, Aalto University
+% viivi.uurtio@aalto.fi
+%
+% This code is for academic purposes only.
+% Commercial use is not allowed.
+%--------------------------------------------------------------------------
 
 F = 5;
 for rep = 1:reps

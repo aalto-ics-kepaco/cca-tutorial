@@ -1,5 +1,4 @@
 function [za,zb,alpha,beta,cc,ev] = cca_generalised_kernel(Ka,Kb,c1,c2,rels)
-
 % This function solves kernel canonical correlation analysis through the
 % generalised eigenvalue problem.
 
@@ -11,7 +10,6 @@ function [za,zb,alpha,beta,cc,ev] = cca_generalised_kernel(Ka,Kb,c1,c2,rels)
 %       c1: the regularisation parameter for the 1st view
 %       c2: the regularisation parameter for the 2nd view
 %       rels: number of relations of interest
-
 % Output
 %       za: the image of the position wa (a.k.a. canonical variate)
 %       zb: the image of the position wb (a.k.a. canonical variate)

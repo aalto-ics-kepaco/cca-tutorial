@@ -8,13 +8,13 @@ function [final, c1_opt, c2_opt] = crossv_kernel(X,Y,F)
 % Input 
 %       X: the data matrix of the 1st view
 %       Y: the data matrix of the 2nd view
-
+%       F: number of folds
 % Output
-%       final: 
-%       c1_opt: 
-%       c2_opt: 
+%       final: the test canonical correlations at all c1 and c2 values
+%       c1_opt: the optimal c1
+%       c2_opt: the optimal c2
 %--------------------------------------------------------------------------
-% © 19/01/2017 Viivi Uurtio, Aalto University
+% © 30/01/2017 Viivi Uurtio, Aalto University
 % viivi.uurtio@aalto.fi
 %
 % This code is for academic purposes only.

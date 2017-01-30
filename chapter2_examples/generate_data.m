@@ -1,22 +1,16 @@
 function [X_a,X_b] = generate_data(n)
-
 % This function generates normally distributed data containing the 
 % specific relations studied in the examples.
 
 % Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
 %--------------------------------------------------------------------------
 % Input 
-%       X_a: the data matrix of the 1st view (view a)
-%       X_b: the data matrix of the 2nd view (view b)
-
+%       n: number of observations
 % Output
-%       za: the image of the position wa (a.k.a. canonical variate)
-%       zb: the image of the position wb (a.k.a. canonical variate)
-%       wa: the position in the data space of view a
-%       wb: the position in the data space of view b
-%       cc: the canonical correlation (cosine of the enclosing angle)
+%       X_a: The data matrix of view a
+%       X_b: The data matrix of view a
 %--------------------------------------------------------------------------
-% © 19/01/2017 Viivi Uurtio, Aalto University
+% © 30/01/2017 Viivi Uurtio, Aalto University
 % viivi.uurtio@aalto.fi
 %
 % This code is for academic purposes only.

@@ -18,6 +18,7 @@ function [za,zb,alpha,beta,cc,ev] = cca_standard_kernel(Ka,Kb,c1,c2,rels)
 %       alpha: the position in the data space of view a
 %       beta: the position in the data space of view b
 %       cc: the canonical correlation (cosine of the enclosing angle)
+%       ev: the square roots of the eigenvalues
 %--------------------------------------------------------------------------
 % © 19/01/2017 Viivi Uurtio, Aalto University
 % viivi.uurtio@aalto.fi

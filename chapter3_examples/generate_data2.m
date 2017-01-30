@@ -1,6 +1,23 @@
-function [X,Y] = generate_data2
+function [X,Y] = generate_data2(n)
+% This function generates normally distributed data containing the 
+% specific relations studied in the examples.
 
-n = 60;
+% Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
+%--------------------------------------------------------------------------
+% Input 
+%       n: number of observations
+% Output
+%       X_a: The data matrix of view a
+%       X_b: The data matrix of view a
+%--------------------------------------------------------------------------
+% © 30/01/2017 Viivi Uurtio, Aalto University
+% viivi.uurtio@aalto.fi
+%
+% This code is for academic purposes only.
+% Commercial use is not allowed.
+%--------------------------------------------------------------------------
+
+%n = 60;
 p = 70;
 q = 10;
 

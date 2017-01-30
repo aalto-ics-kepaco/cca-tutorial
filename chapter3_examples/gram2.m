@@ -1,4 +1,4 @@
-function [ Kx ] = gram2( X1, X2, kernel_type, kernel_param)
+function Kx = gram2(X1, X2, kernel_type, kernel_param)
 % Compute the gram matrix between the sets X1 and X2
 % INPUTS:
 % X1:           matrix of size n1 * p
@@ -8,6 +8,14 @@ function [ Kx ] = gram2( X1, X2, kernel_type, kernel_param)
 %               kernel, it corresponds to a vector containing two values
 % OUTPUTS:
 % Kx:           Gram matrix of size n1 * n2
+
+%--------------------------------------------------------------------------
+% © Celine Brouard, Aalto University
+% celine.brouard@aalto.fi
+%
+% This code is for academic purposes only.
+% Commercial use is not allowed.
+%--------------------------------------------------------------------------
 
     n1 = size(X1,2);
     n2 = size(X2,2);

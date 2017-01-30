@@ -6,8 +6,8 @@ function [za,zb,wa,wb,cc,ev] = cca_standard_regularised(X_a,X_b,c1,c2)
 % Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
 %--------------------------------------------------------------------------
 % Input 
-%       Ka: the Gram matrix of the 1st view (view a)
-%       Kb: the Gram matrix of the 2nd view (view b)
+%       X_a: the data matrix of the 1st view (view a)
+%       X_b: the data matrix of the 2nd view (view b)
 %       c1: the regularisation parameter for the 1st view
 %       c2: the regularisation parameter for the 2nd view
 
@@ -17,6 +17,7 @@ function [za,zb,wa,wb,cc,ev] = cca_standard_regularised(X_a,X_b,c1,c2)
 %       wa: the position in the data space of view a
 %       wb: the position in the data space of view b
 %       cc: the canonical correlation (cosine of the enclosing angle)
+%       ev: the square roots of the eigenvalues 
 %--------------------------------------------------------------------------
 % © 19/01/2017 Viivi Uurtio, Aalto University
 % viivi.uurtio@aalto.fi

@@ -4,11 +4,18 @@
 % examples of the chapter 3 of the paper "A Tutorial on Canonical 
 % Correlation Methods".
 
+%--------------------------------------------------------------------------
+% © 30/01/2017 Viivi Uurtio, Aalto University
+% viivi.uurtio@aalto.fi
+%
+% This code is for academic purposes only.
+% Commercial use is not allowed.
+%--------------------------------------------------------------------------
 %% Example 3.1. Regularised CCA
 clear % clear workspace
 rng(0) % initialise the random number generator to reproduce the results
 
-[X_a,X_b] = generate_data2;  % observations from a random normal multivariate distribution
+[X_a,X_b] = generate_data2(60);  % observations from a random normal multivariate distribution
 
 c1 = 0.01:0.01:1; % testing range for regularisation parameter c1
 c2 = 0; % testing range for regularisation parameter c2
@@ -79,14 +86,15 @@ pat3 = [abs(corr(-X_a(:,4),zah))' abs(corr(X_b(:,3),zbh))'];
 
 %% Example 3.4. Sparse CCA Through PMD
 clear
-load pmd_result.mat
+load pmd_result.mat % load the positions wa, wb obtained by pmd in R
 %load sparse_data.mat
 rng(0)
-[A,B]=generate_data_pmd;
+[X_a,X_b] = generate_data_pmd(50); % the data matrices
 
-za_pmd = normc(zscore(A) * wa); % on the surface of the unit ball
-zb_pmd = normc(zscore(B) * wb); % on the surface of the unit ball
+za_pmd = normc(zscore(X_a) * wa); % on the surface of the unit ball
+zb_pmd = normc(zscore(X_b) * wb); % on the surface of the unit ball
 
+% the first three canonical correlations
 [za_pmd(:,1)'*zb_pmd(:,1);
 za_pmd(:,2)'*zb_pmd(:,2);
 za_pmd(:,3)'*zb_pmd(:,3)]
@@ -96,7 +104,7 @@ za_pmd(:,3)'*zb_pmd(:,3)]
 clear
 rng(0)
 
-[X_a,X_b] = generate_scca_data; % generate data
+[X_a,X_b] = generate_scca_data(50); % generate data
 X_a = zscore(X_a); X_b = zscore(X_b); % standardise
 
 X = X_a;
@@ -121,7 +129,7 @@ es(es < 1e-6) = 0;
 
 [val, ind] = min(optvals);
 min_opt = optvals(ind); 
-optcor = corvals(ind);
+optcor = corvals(ind); % the optimal canonical correlation
 W = was(:,ind); % variables in view a
 E = es(:,ind); % observations in view b
 

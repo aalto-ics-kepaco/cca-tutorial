@@ -1,5 +1,4 @@
 function [cv,indices] = stratified_cv(y, nfold)
-
 % This function partitions the data into training and test sets.
 
 % Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
@@ -7,7 +6,6 @@ function [cv,indices] = stratified_cv(y, nfold)
 % Input 
 %       y: vector of labels
 %       nfold: number of folds
-
 % Output
 %       cv: struct from cvpartition
 %       indices: the indices of the partitioning

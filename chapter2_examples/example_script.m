@@ -13,7 +13,6 @@
 %--------------------------------------------------------------------------
 
 %% Example 2.1. Solving CCA Through the Standard Eigenvalue Problem
-
 clear
 rng(0) % initialise the random number generator to reproduce the results
 
@@ -28,7 +27,7 @@ X_atest = X_a(test,:); X_btest = X_b(test,:); % select the test observations, ne
 X_a = X_a(train,:); X_b = X_b(train,:); % select the training observations 
 X_a = zscore(X_a); X_b = zscore(X_b); % standardise the training variables
 
-[za_sta, zb_sta, wa_sta, wb_sta, cc_sta, ev_sta, C] = cca_standard_eigenvalue_problem(X_a,X_b);
+[za_sta, zb_sta, wa_sta, wb_sta, cc_sta, ev_sta] = cca_standard_eigenvalue_problem(X_a,X_b);
 
 %% Example 2.2. Solving CCA Through the Generalised Eigenvalue Problem
 
@@ -36,7 +35,7 @@ X_a = zscore(X_a); X_b = zscore(X_b); % standardise the training variables
 
 %% Example 2.3. Solving CCA Using the SVD
 
-[za_svd, zb_svd, wa_svd, wb_svd, cc_svd, T, U, S,V] = cca_svd(X_a, X_b);
+[za_svd, zb_svd, wa_svd, wb_svd, cc_svd] = cca_svd(X_a, X_b);
 
 %% Example 2.4. Bartlett's sequential test procedure
 
