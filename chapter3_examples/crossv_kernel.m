@@ -1,7 +1,7 @@
 function [final, c1_opt, c2_opt] = crossv_kernel(X,Y,F)
 
 % This function performs repeated cross-validation to determine the optimal
-% regularisation parameters.
+% regularisation parameters of kernel canonical correlation analysis.
 
 % Uurtio et al. A Tutorial on Canonical Correlation Methods. 2017.
 %--------------------------------------------------------------------------
@@ -21,11 +21,11 @@ function [final, c1_opt, c2_opt] = crossv_kernel(X,Y,F)
 % Commercial use is not allowed.
 %--------------------------------------------------------------------------
 
-pats = 10;
-c1 = 0.2:0.1:1.5;
-c2 = 0.2:0.1:1.5;
+pats = 10; % number of relations, patterns
+c1 = 0.2:0.1:1.5; % values to be tested for c1
+c2 = 0.2:0.1:1.5; % values to be tested for c1
 
-for rep = 1:20
+for rep = 1:20 % repetitions
     [~,indices] = stratified_cv(size(X,1), F);
     for j = 1:size(c1,2)
         for k = 1:size(c2,2)
