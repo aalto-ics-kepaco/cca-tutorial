@@ -15,7 +15,7 @@ function [c1_opt,c2_opt,final] = repeated_cross_validation(X_a,X_b,c1,c2,reps)
 %       c2_opt: the optimal c2
 %       final: the test canonical correlations at all c1 and c2 values
 %--------------------------------------------------------------------------
-% © 30/01/2017 Viivi Uurtio, Aalto University
+% ï¿½ 30/01/2017 Viivi Uurtio, Aalto University
 % viivi.uurtio@aalto.fi
 %
 % This code is for academic purposes only.
@@ -53,9 +53,10 @@ for rep = 1:reps
                 % sort the eigenvalues and eigenvectors
                 [eig_sorted, ind] = sort(rhos,'descend');
                 wb = eigvectors(:,ind);
+		wb = wb(:,1); % we only consider the first eigenvector
                 
-                wa = zeros(size(trainX_a,2),min([rank(trainX_a) rank(trainX_b)]));
-                for i = 1:size(wb,2)
+                wa = zeros(size(trainX_a,2),1);
+                for i = 1:size(wb,2) 
                     wa(:,i) = (inv(C_aa) * C_ab * wb(:,i)) / eig_sorted(i);
                 end                
                 za = normc(zscore(X_a(test,:)) * wa(:,1));
@@ -65,9 +66,9 @@ for rep = 1:reps
             end        
             mean_corr(j,k,rep) = mean(test_corr);  
         end
-    end
-    final = mean(mean_corr,3);
+    end   
 end
+final = mean(mean_corr,3);
 
 [~, ind] = max(final(:));
 [r, c] = ind2sub(size(final),ind);
